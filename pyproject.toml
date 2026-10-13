@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "twinmyscreen"
+dynamic = ["version"]
+description = "Mirror and control your Android phone from your PC with zero manual setup"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+keywords = ["android", "scrcpy", "adb", "screen-mirroring"]
+classifiers = [
+  "Environment :: Console",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+]
+dependencies = ["zeroconf>=0.130"]
+
+[project.scripts]
+twinmyscreen = "twinmyscreen.cli:main"
+# tms = "twinmyscreen.cli:main"   # короткий псевдоним, раскомментируй после проверки
+
+[tool.hatch.version]
+path = "twinmyscreen/__init__.py"
